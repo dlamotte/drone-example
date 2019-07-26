@@ -9,4 +9,5 @@ steps:
   - go build
   - ls -l
   - pwd
+  - file ./drone-example
   - ./drone-example
