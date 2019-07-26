@@ -8,7 +8,7 @@ steps:
   - go test
   - go build
 
-- name: build
+- name: run
   image: debian:stretch
   commands:
   - ls -l
