@@ -8,13 +8,15 @@ steps:
   - go test
   - go build
   - go run main.go
+  - ls -l
 
 - name: run
   image: debian:stretch
   commands:
   - apt-get update && apt-get install file -y
-  - ls -l
   - pwd
   - whoami
+  - df -hl
+  - df -hl .
   - file ./drone-example
   - ./drone-example
