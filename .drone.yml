@@ -22,4 +22,5 @@ steps:
   - df -hl
   - df -hl .
   - file ./drone-example
-  - ./drone-example
+  - cp -a ./drone-example /tmp
+  - /tmp/drone-example
