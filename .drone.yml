@@ -7,6 +7,7 @@ steps:
   commands:
   - go test
   - go build
+  - go run main.go
 
 - name: run
   image: debian:stretch
