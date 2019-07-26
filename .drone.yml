@@ -7,4 +7,6 @@ steps:
   commands:
   - go test
   - go build
+  - ls -l
+  - chmod +x ./drone-example
   - ./drone-example
