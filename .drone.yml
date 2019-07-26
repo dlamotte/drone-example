@@ -1,6 +1,9 @@
 kind: pipeline
 name: default
 
+platform:
+  arch: amd64
+
 steps:
 - name: build
   image: golang
