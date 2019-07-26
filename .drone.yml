@@ -2,11 +2,15 @@ kind: pipeline
 name: default
 
 steps:
-- name: test
+- name: build
   image: golang
   commands:
   - go test
   - go build
+
+- name: build
+  image: debian:stretch
+  commands:
   - ls -l
   - pwd
   - file ./drone-example
