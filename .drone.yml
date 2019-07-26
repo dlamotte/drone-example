@@ -1,9 +1,6 @@
 kind: pipeline
 name: default
 
-platform:
-  arch: amd64
-
 steps:
 - name: build
   image: golang
@@ -12,15 +9,8 @@ steps:
   - go build
   - go run main.go
   - ls -l
-
-- name: run
-  image: debian:stretch
-  commands:
-  - apt-get update && apt-get install file -y
-  - pwd
-  - whoami
-  - df -hl
-  - df -hl .
-  - file ./drone-example
+  # no idea why this is necessary, but when running in place (on tmpfs)...
+  #   + ./drone-example
+  #   /usr/drone/bin/init: 35: /usr/drone/bin/init: ./drone-example: Permission denied
   - cp -a ./drone-example /tmp
   - /tmp/drone-example
